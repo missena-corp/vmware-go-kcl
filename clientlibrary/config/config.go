@@ -58,6 +58,15 @@ const (
 	// when the application starts for the first time and there is no checkpoint for the shard.
 	DefaultInitialPositionInStream = LATEST
 
+	// CONTINUE
+	CONTINUE RestartPositionInStream = iota + 1
+	// RESTART
+	RESTART
+
+	// The location in the shard from which the KinesisClientLibrary will start fetching records from
+	// when the application starts for the first time and there is no checkpoint for the shard.
+	DefaultRestartPositionInStream = CONTINUE
+
 	// Fail over time in milliseconds. A worker which does not renew it's lease within this time interval
 	// will be regarded as having problems and it's shards will be assigned to other workers.
 	// For applications that have a large number of shards, this may be set to a higher number to reduce
@@ -137,6 +146,9 @@ const (
 )
 
 type (
+	// RestartPositionInStream Used to specify the Position in the stream where a new application should restart from
+	RestartPositionInStream int
+
 	// InitialPositionInStream Used to specify the Position in the stream where a new application should start from
 	// This is used during initial application bootstrap (when a checkpoint doesn't exist for a shard or its parents)
 	InitialPositionInStream int
@@ -195,6 +207,9 @@ type (
 
 		// WorkerID used to distinguish different workers/processes of a Kinesis application
 		WorkerID string
+
+		// RestartPositionInStream
+		RestartPositionInStream RestartPositionInStream
 
 		// InitialPositionInStream specifies the Position in the stream where a new application should start from
 		InitialPositionInStream InitialPositionInStream

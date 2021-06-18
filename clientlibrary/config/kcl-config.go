@@ -79,6 +79,7 @@ func NewKinesisClientLibConfigWithCredentials(applicationName, streamName, regio
 		WorkerID:                                         workerID,
 		InitialPositionInStream:                          DefaultInitialPositionInStream,
 		InitialPositionInStreamExtended:                  *newInitialPosition(DefaultInitialPositionInStream),
+		RestartPositionInStream:                          DefaultRestartPositionInStream,
 		FailoverTimeMillis:                               DefaultFailoverTimeMillis,
 		LeaseRefreshPeriodMillis:                         DefaultLeaseRefreshPeriodMillis,
 		MaxRecords:                                       DefaultMaxRecords,

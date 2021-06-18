@@ -72,8 +72,9 @@ func (sc *commonShardConsumer) getStartingPosition() (*kinesis.StartingPosition,
 		return nil, err
 	}
 
+	//TODO: move the starting point
 	checkpoint := sc.shard.GetCheckpoint()
-	if checkpoint != "" {
+	if checkpoint != "" && sc.kclConfig.RestartPositionInStream == config.CONTINUE {
 		sc.kclConfig.Logger.Debugf("Start shard: %v at checkpoint: %v", sc.shard.ID, checkpoint)
 		return &kinesis.StartingPosition{
 			Type:           aws.String("AFTER_SEQUENCE_NUMBER"),
