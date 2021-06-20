@@ -31,7 +31,7 @@ import (
 	"errors"
 	"fmt"
 
-	par "github.com/vmware/vmware-go-kcl/clientlibrary/partition"
+	par "github.com/missena-corp/vmware-go-kcl/clientlibrary/partition"
 )
 
 const (

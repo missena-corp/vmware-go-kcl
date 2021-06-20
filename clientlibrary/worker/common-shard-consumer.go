@@ -27,11 +27,11 @@ import (
 	"github.com/aws/aws-sdk-go/service/kinesis/kinesisiface"
 	deagg "github.com/awslabs/kinesis-aggregation/go/deaggregator"
 
-	chk "github.com/vmware/vmware-go-kcl/clientlibrary/checkpoint"
-	"github.com/vmware/vmware-go-kcl/clientlibrary/config"
-	kcl "github.com/vmware/vmware-go-kcl/clientlibrary/interfaces"
-	"github.com/vmware/vmware-go-kcl/clientlibrary/metrics"
-	par "github.com/vmware/vmware-go-kcl/clientlibrary/partition"
+	chk "github.com/missena-corp/vmware-go-kcl/clientlibrary/checkpoint"
+	"github.com/missena-corp/vmware-go-kcl/clientlibrary/config"
+	kcl "github.com/missena-corp/vmware-go-kcl/clientlibrary/interfaces"
+	"github.com/missena-corp/vmware-go-kcl/clientlibrary/metrics"
+	par "github.com/missena-corp/vmware-go-kcl/clientlibrary/partition"
 )
 
 type shardConsumer interface {
